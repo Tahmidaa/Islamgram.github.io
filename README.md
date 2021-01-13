@@ -20,7 +20,7 @@ OBJECTIVE
 
 To introduce to the society a new social media where they can post Islamic content only and benefit the Ummah. 
 
-Features & Functionalities 
+FEATURES & FUNCTIONALILTIES 
 
 -Authentication: Users can register where they have to key in their details.
 
