@@ -19,6 +19,7 @@ For our project, a web application, ISLAMGRAM, has been developed. In today’s 
 OBJECTIVE
 
 To introduce to the society a new social media where they can post Islamic content only and benefit the Ummah. 
+
 Features & Functionalities 
 
 Authentication: Users can register where they have to key in their details.
