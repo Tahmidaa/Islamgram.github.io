@@ -22,10 +22,14 @@ To introduce to the society a new social media where they can post Islamic conte
 
 Features & Functionalities 
 
-Authentication: Users can register where they have to key in their details.
+-Authentication: Users can register where they have to key in their details.
+
 -If a user already has an account, they can login with their username and password only. 
+
 -Users can add posts.
+
 -Users can edit their profile information.
+
 -Users can delete posts.
 
 
