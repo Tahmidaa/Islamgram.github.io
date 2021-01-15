@@ -63,10 +63,10 @@ If a user already has an account, they can login with their username and passwor
 
 auth: 
 
-It has the authentication files which allows users to login and register to the application. No changes were made in this folder.
-Login
-Register
-Verify
+It has the authentication files which allows users to login and register to the application. Only change that we made is in register view.
+- Login
+- Register: In register view we added one more field of username.
+- Verify
 
 layouts: 
 
