@@ -223,6 +223,15 @@ Users should not be able to see the ‘edit profile’ button, ‘add a new post
 ![ISLAMGRAM](https://user-images.githubusercontent.com/48441196/104746060-c14b3680-5789-11eb-8602-c6f6acd60135.png)
 
 
+# References
+https://laravel.com/docs/5.2/controllers#restful-resource-controllers
+https://laravel.com/docs/5.2/validation#available-validation-rules
+https://laravel.com/docs/5.2/controllers#restful-resource-controllers
+http://image.intervention.io/
+https://laravel.com/docs/5.2/validation#rule-url
+https://laravel.com/docs/5.2/eloquent#events
+https://laravel.com/docs/5.7/frontend#writing-vue-components
+https://vuejs.org/v2/guide/single-file-components.html
 
 
 
