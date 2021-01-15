@@ -61,18 +61,18 @@ If a user already has an account, they can login with their username and passwor
 
 # VIEWS
 
-auth: 
+- Auth: 
 
 It has the authentication files which allows users to login and register to the application. Only change that we made is in register view.
 - Login
 - Register: In register view we added one more field of username.
 - Verify
 
-layouts: 
+- Layouts: 
 
 This folder contains app.blade.php, the HTML design for the app’s home page and navigation bar, logo, and name of the app and username of the user. 
 
-  # Profiles: 
+ - Profiles: 
 
 -Index.blade.php:
 
