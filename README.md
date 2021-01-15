@@ -232,6 +232,7 @@ https://laravel.com/docs/5.2/controllers#restful-resource-controllers
 https://laravel.com/docs/5.2/validation#available-validation-rules
 https://laravel.com/docs/5.2/controllers#restful-resource-controllers
 http://image.intervention.io/
+https://laravel.com/docs/8.x/authorization#creating-policies
 https://laravel.com/docs/5.2/validation#rule-url
 https://laravel.com/docs/5.2/eloquent#events
 https://laravel.com/docs/5.7/frontend#writing-vue-components
