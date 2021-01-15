@@ -61,40 +61,40 @@ If a user already has an account, they can login with their username and passwor
 
 # VIEWS
 
-- Auth: 
+   # Auth: 
 
 It has the authentication files which allows users to login and register to the application. Only change that we made is in register view.
   - Login
   - Register: In register view we added one more field of username.
   - Verify
 
-- Layouts: 
+  # Layouts: 
 
 This folder contains app.blade.php, the HTML design for the app’s home page and navigation bar, logo, and name of the app and username of the user. 
 
-- Profiles: 
+  # Profiles: 
 
- -Index.blade.php:
+- Index.blade.php:
 
 In this file, we have designed our users profile page which contains profile picture, username, follow-button, add new posts button, edit profile button, delete user button, title, description and url. The counts of posts, followers, and following have been added as well. Moreover, a column of  posts which display the posts of the user is added which is wrapped within for each loop along with its delete button. Some of the elements inside this blade have been protected with policy so that they do not appear if the user is logged out and searches for any profile. We have added csrf and some required methods like @method('post') as well.
 
 
--Edit.blade.php:
+- Edit.blade.php:
 
 This blade is for edit profile page so when the user clicks on edit profile he is redirected to this page. Firstly, we made a class container and a form of method post. Even though we are posting through the method of POST we actually used PATCH internally. We used PATCH here as we are updating. We made the title “Edit Profile”. We made three div class form-group rows for the title, description, URL, and one div class row for profile picture uploading. Finally made a button for “Save Profile”. As some of these are required fields so we have added some error handlers which wrap these fields, and display a message on screen eg: “the image should be an image”.
                                  In order to make the edit form prefilled, in the edit blade we are setting an old title, in the case when we fail to validate and come back again and expect those fields to be populated with the data that we entered. We also passed another thing, which shows whatever is inside the current profile, just in case ‘old’ is not set. We did this for title, description and URL. 
 
-  # Posts: 
+   # Posts: 
 
--Create.blade.php
+- Create.blade.php
 
 This blade has been created for the add new post page which includes a form of methods post and this form has the title of ‘Add new post’ and two sections: uploading image and writing image caption along with the button that adds the new post and redirect to the profile page. As these are required fields so we have added some error handlers which wrap these two fields, and display a message on screen eg: “this field is required”.
 
--Index.blade.php
+- Index.blade.php
 
 This blade has been created for our feed page where when a user follows other users, this page fetches their posts along with their profile picture, username and caption of that image. They have been wrapped within the foreach loop to show all posts whenever the user posts new ones. Also users posts and usernames are clickable which takes to the profile of that particular user.
 
--Show.blade.php
+- Show.blade.php
 
 This blade has been created for a page when a user clicks on a particular post, the post along with username and caption is displayed in another page with a new view. And this blade creates that view. This view shows one post in a big round circle and the posts’ users name and that image’s caption. Also, the user name is clickable which takes back to the profile page.
 
