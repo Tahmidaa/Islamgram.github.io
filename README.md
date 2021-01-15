@@ -61,51 +61,52 @@ If a user already has an account, they can login with their username and passwor
 
 # VIEWS
 
-# auth: 
+auth: 
 
 It has the authentication files which allows users to login and register to the application. No changes were made in this folder.
 Login
 Register
 Verify
 
-# layouts: 
+layouts: 
 
 This folder contains app.blade.php, the HTML design for the app’s home page and navigation bar, logo, and name of the app and username of the user. 
 
-# Profiles: 
+  # Profiles: 
 
-# Index.blade.php:
+Index.blade.php:
 
 In this file, we have designed our users profile page which contains profile picture, username, follow-button, add new posts button, edit profile button, delete user button, title, description and url. The counts of posts, followers, and following have been added as well. Moreover, a column of  posts which display the posts of the user is added which is wrapped within for each loop along with its delete button. Some of the elements inside this blade have been protected with policy so that they do not appear if the user is logged out and searches for any profile. We have added csrf and some required methods like @method('post') as well.
 
 
-# Edit.blade.php:
+Edit.blade.php:
 
 This blade is for edit profile page so when the user clicks on edit profile he is redirected to this page. Firstly, we made a class container and a form of method post. Even though we are posting through the method of POST we actually used PATCH internally. We used PATCH here as we are updating. We made the title “Edit Profile”. We made three div class form-group rows for the title, description, URL, and one div class row for profile picture uploading. Finally made a button for “Save Profile”. As some of these are required fields so we have added some error handlers which wrap these fields, and display a message on screen eg: “the image should be an image”.
 In order to make the edit form prefilled, in the edit blade we are setting an old title, in the case when we fail to validate and come back again and expect those fields to be populated with the data that we entered. We also passed another thing, which shows whatever is inside the current profile, just in case ‘old’ is not set. We did this for title, description and URL. 
 
-# Posts: 
+  # Posts: 
 
- #Create.blade.php
+Create.blade.php
 
 This blade has been created for the add new post page which includes a form of methods post and this form has the title of ‘Add new post’ and two sections: uploading image and writing image caption along with the button that adds the new post and redirect to the profile page. As these are required fields so we have added some error handlers which wrap these two fields, and display a message on screen eg: “this field is required”.
 
-# Index.blade.php
+Index.blade.php
 
 This blade has been created for our feed page where when a user follows other users, this page fetches their posts along with their profile picture, username and caption of that image. They have been wrapped within the foreach loop to show all posts whenever the user posts new ones. Also users posts and usernames are clickable which takes to the profile of that particular user.
 
 Show.blade.php
+
 This blade has been created for a page when a user clicks on a particular post, the post along with username and caption is displayed in another page with a new view. And this blade creates that view. This view shows one post in a big round circle and the posts’ users name and that image’s caption. Also, the user name is clickable which takes back to the profile page.
 
 # CONTROLLERS
 
-# RESTFUL Resource Controller:
+  # RESTFUL Resource Controller:
 
 We have followed the convention of this controller as it makes web apps easier to update and the codebase cleaner. It is a predetermined number of verbs that we used in this project. We used seven of them. Each of the actions is matched with a particular URL, method, and has a route name. We have used below controllers for our project:
 Register Controller: We are mentioning this controller because we modified it a little bit as we have added a username in the form of register so we had to include that here for validation purpose and fetching its data under validator and create function respectively.
 
 
-# ProfilesController:
+  # ProfilesController:
 
 This represents the index.blade.php and edit.blade.php files from the profiles views directory. It has three functions.
 - The function index gives the route access to the user variable by passing through an argument in the function which gives the id of the user. This shows the profile of users with actual usernames. Instead of passing through an array, we used a compact function where we passed the ‘user’ and ‘follow’.
@@ -121,7 +122,7 @@ To keep users from accessing other accounts and editing their profile, we used a
 
 - The destroy function: This function deals with the deleting user button. It finds the particular user id and deletes it and redirects users to the login page.
 
-# PostsController:
+  # PostsController:
 
 This represents the create.blade.php,  index.blade.php and index.blade.php files from the posts views directory. The functions used in it are:
    - The function construct: Under this function, middleware helps to hide create page and show page if the user is not logged in as everything in this controller will require authentication.
@@ -131,7 +132,7 @@ This represents the create.blade.php,  index.blade.php and index.blade.php files
    - The function show: This function deals with the show page which is when a user clicks on a post it shows post details in another page. This method takes a post and return view which displays post image, username and caption.
    - The function destroy: This function deals with the deleting post button. It finds the particular post id and deletes it and redirects users to the same profile page.
         
-FollowsController: 
+  # FollowsController: 
 
 This controller deals most with the authentication, the middleware protects follow action from unauthorized follow request like if the user is not logged in he cannot follow a user and if he tries to he will be redirected to the login page. 
    - Function store: This function grabs the authenticated user and attaches or detaches the follow relationship that is toggle between follow or unfollow by toggling user profile.
@@ -167,7 +168,7 @@ This route will do the process of updating the records by first hitting the edit
 
 # MODELS
 
-# User.php:
+  # User.php:
 
 This model represents a single row in our database and that represents a single user in our database. The attributes that are mass assignable are 'name', ‘email', username', ‘password'. The attribute that needs to be hidden is ‘password’. It has some functions:
 Function boot: a boot method has been used here which gets called up whenever we are booting this model. We have used a laravel event ‘created’ inside it which gets fired when a new user is created and with that profile is also created for that user and a default of title is also set inside it to their username.
@@ -175,17 +176,17 @@ Function posts: Under this function, we have defined the relationship that a use
 Function profile: Under this function we have defined the relationship that a user has one profile. (one to one relationship with profile)
 Function following: Under this function we have defined the relationship that a user can follow many profiles. (many to many relationship with profile). For follow, we have also made a separate pivot table which holds id of two related models (user and profile).
 
-# Profile.php: 
+  # Profile.php: 
 
 This model has a relationship of one to one with the user that is a profile belongs to a user. And hence we fetched this relationship on both sides. In order to avoid the mass assignment exception error, in this model we use protected guarded which passes an empty array and hence laravel will not guard it and will allow us to fill everything. We have added two more functions in it:
 Function followers: Under this function we have defined the relationship that a profile can have many followers. (many to many relationship) and hence we also fetched this relationship on both sides.
 Function profileImage: This is basically for the default picture of the user. Like when a new user registers this function will check whether to return default picture or users picture. If the user is new it will return the default picture that we have setup or else the users profile picture.
 
-# Post.php : 
+  # Post.php : 
 
 This model has a relationship with a user of one to many that  a post belongs to a user. And hence we fetched this relationship on both sides. Again, in order to avoid the mass assignment exception error, in this model, we also use protected guarded which passes an empty array and will allow us to fill everything.
 
-# FollowButton.vue:
+  # FollowButton.vue:
 
 We have used vue also in our project for follow button that is we turned follow button into a vue component in order to turn it from follow to unfollow, so in this way we can interact with server to follow the user and in response it should show unfollow.  We renamed the component in resources/js as FollowButton and made changes accordingly in bootstrap.js and in our view. Then we run npm watch which continues to watch our files so if any changes are made, it can recompile all files. Our follow button is inside the vue component when clicked reaches the server and connects two users. We have followUser method inside it which when receives successful response changes status from follow to unfollow. We have taken two properties inside it userid and follows. And for the whole response process we used axios which is already installed and is a js library which allows to make API calls easily.
 
