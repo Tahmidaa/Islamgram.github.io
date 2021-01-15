@@ -74,27 +74,27 @@ This folder contains app.blade.php, the HTML design for the app’s home page an
 
   # Profiles: 
 
-Index.blade.php:
+-Index.blade.php:
 
 In this file, we have designed our users profile page which contains profile picture, username, follow-button, add new posts button, edit profile button, delete user button, title, description and url. The counts of posts, followers, and following have been added as well. Moreover, a column of  posts which display the posts of the user is added which is wrapped within for each loop along with its delete button. Some of the elements inside this blade have been protected with policy so that they do not appear if the user is logged out and searches for any profile. We have added csrf and some required methods like @method('post') as well.
 
 
-Edit.blade.php:
+-Edit.blade.php:
 
 This blade is for edit profile page so when the user clicks on edit profile he is redirected to this page. Firstly, we made a class container and a form of method post. Even though we are posting through the method of POST we actually used PATCH internally. We used PATCH here as we are updating. We made the title “Edit Profile”. We made three div class form-group rows for the title, description, URL, and one div class row for profile picture uploading. Finally made a button for “Save Profile”. As some of these are required fields so we have added some error handlers which wrap these fields, and display a message on screen eg: “the image should be an image”.
-In order to make the edit form prefilled, in the edit blade we are setting an old title, in the case when we fail to validate and come back again and expect those fields to be populated with the data that we entered. We also passed another thing, which shows whatever is inside the current profile, just in case ‘old’ is not set. We did this for title, description and URL. 
+                                 In order to make the edit form prefilled, in the edit blade we are setting an old title, in the case when we fail to validate and come back again and expect those fields to be populated with the data that we entered. We also passed another thing, which shows whatever is inside the current profile, just in case ‘old’ is not set. We did this for title, description and URL. 
 
   # Posts: 
 
-Create.blade.php
+-Create.blade.php
 
 This blade has been created for the add new post page which includes a form of methods post and this form has the title of ‘Add new post’ and two sections: uploading image and writing image caption along with the button that adds the new post and redirect to the profile page. As these are required fields so we have added some error handlers which wrap these two fields, and display a message on screen eg: “this field is required”.
 
-Index.blade.php
+-Index.blade.php
 
 This blade has been created for our feed page where when a user follows other users, this page fetches their posts along with their profile picture, username and caption of that image. They have been wrapped within the foreach loop to show all posts whenever the user posts new ones. Also users posts and usernames are clickable which takes to the profile of that particular user.
 
-Show.blade.php
+-Show.blade.php
 
 This blade has been created for a page when a user clicks on a particular post, the post along with username and caption is displayed in another page with a new view. And this blade creates that view. This view shows one post in a big round circle and the posts’ users name and that image’s caption. Also, the user name is clickable which takes back to the profile page.
 
@@ -171,16 +171,16 @@ This route will do the process of updating the records by first hitting the edit
   # User.php:
 
 This model represents a single row in our database and that represents a single user in our database. The attributes that are mass assignable are 'name', ‘email', username', ‘password'. The attribute that needs to be hidden is ‘password’. It has some functions:
-Function boot: a boot method has been used here which gets called up whenever we are booting this model. We have used a laravel event ‘created’ inside it which gets fired when a new user is created and with that profile is also created for that user and a default of title is also set inside it to their username.
-Function posts: Under this function, we have defined the relationship that a user has many posts (one to many relationship with post). And we have set the order of posts here so they appear according to created_at. 
-Function profile: Under this function we have defined the relationship that a user has one profile. (one to one relationship with profile)
-Function following: Under this function we have defined the relationship that a user can follow many profiles. (many to many relationship with profile). For follow, we have also made a separate pivot table which holds id of two related models (user and profile).
+- Function boot: a boot method has been used here which gets called up whenever we are booting this model. We have used a laravel event ‘created’ inside it which gets fired when a new user is created and with that profile is also created for that user and a default of title is also set inside it to their username.
+- Function posts: Under this function, we have defined the relationship that a user has many posts (one to many relationship with post). And we have set the order of posts here so they appear according to created_at. 
+- Function profile: Under this function we have defined the relationship that a user has one profile. (one to one relationship with profile)
+- Function following: Under this function we have defined the relationship that a user can follow many profiles. (many to many relationship with profile). For follow, we have also made a separate pivot table which holds id of two related models (user and profile).
 
   # Profile.php: 
 
 This model has a relationship of one to one with the user that is a profile belongs to a user. And hence we fetched this relationship on both sides. In order to avoid the mass assignment exception error, in this model we use protected guarded which passes an empty array and hence laravel will not guard it and will allow us to fill everything. We have added two more functions in it:
-Function followers: Under this function we have defined the relationship that a profile can have many followers. (many to many relationship) and hence we also fetched this relationship on both sides.
-Function profileImage: This is basically for the default picture of the user. Like when a new user registers this function will check whether to return default picture or users picture. If the user is new it will return the default picture that we have setup or else the users profile picture.
+- Function followers: Under this function we have defined the relationship that a profile can have many followers. (many to many relationship) and hence we also fetched this relationship on both sides.
+- Function profileImage: This is basically for the default picture of the user. Like when a new user registers this function will check whether to return default picture or users picture. If the user is new it will return the default picture that we have setup or else the users profile picture.
 
   # Post.php : 
 
