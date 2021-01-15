@@ -26,7 +26,7 @@ Hadil-
 
 1. Delete
 2. Follow
-3. Adding username toregistration
+3. Adding username to registration
 
 
 # ABSTRACT
