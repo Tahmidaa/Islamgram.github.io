@@ -64,17 +64,17 @@ If a user already has an account, they can login with their username and passwor
 - Auth: 
 
 It has the authentication files which allows users to login and register to the application. Only change that we made is in register view.
-- Login
-- Register: In register view we added one more field of username.
-- Verify
+  - Login
+  - Register: In register view we added one more field of username.
+  - Verify
 
 - Layouts: 
 
 This folder contains app.blade.php, the HTML design for the app’s home page and navigation bar, logo, and name of the app and username of the user. 
 
- - Profiles: 
+- Profiles: 
 
--Index.blade.php:
+ -Index.blade.php:
 
 In this file, we have designed our users profile page which contains profile picture, username, follow-button, add new posts button, edit profile button, delete user button, title, description and url. The counts of posts, followers, and following have been added as well. Moreover, a column of  posts which display the posts of the user is added which is wrapped within for each loop along with its delete button. Some of the elements inside this blade have been protected with policy so that they do not appear if the user is logged out and searches for any profile. We have added csrf and some required methods like @method('post') as well.
 
