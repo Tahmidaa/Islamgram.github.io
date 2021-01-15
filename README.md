@@ -28,7 +28,6 @@ Hadil-
 2. Follow
 3. Adding username to registration
 
-
 # ABSTRACT
 
 ICT has brought many changes in human life. It has drawn the world closer as a global village with the introduction of social media. Social media has put both negative and positive impacts on people but plays a very vital role in exchanging ideas and sharing information. Social media has a significant positive impact on Islam if appropriately used, it can help to spread the cause of Allah (SWT) and put a positive impact on the ummah. Hence, for this intention, we have come up to build a social media platform ISLAMGRAM, where people can post only Islamic messages and spread the words of Allah and our Prophet (PBUH).
@@ -195,6 +194,11 @@ We have used vue also in our project for follow button that is we turned follow 
 
 Users should not be able to see the ‘edit profile’ button, ‘add a new post’ button, and both ‘delete’ buttons on other users' profiles. So for that, we used policy and it is a very simple way to restrict what a user can/cannot do with a particular resource. Policies are associated with a specific model and in our project, we have created a policy for the Profile model. This policy file has functions for all actions and we just had to return true or false. In our case, we just used the update function and then used the same idea with other buttons to hide them. It determines who can update the profile. The user_id of the user needs to match the profile user_id to be able to update a profile. So, the user who has owned the profile can only see these operations.
 
+ # Relationships
+ - One to one
+ - One to many
+ - Many to many
+ 
  # CLI used in our project
 
 - PHP ARTISAN MAKE: AUTH
