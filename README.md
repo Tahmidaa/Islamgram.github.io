@@ -137,7 +137,7 @@ ROUTES
 
 In our project, we have a total of 8 routes and each of them works with different views and displays different functions.
 
-1.Route::post('follow/{user}', 'App\Http\Controllers\FollowsController@store');
+1. Route::post('follow/{user}', 'App\Http\Controllers\FollowsController@store');
 It fetches the user’s information on follow by first hitting the store function inside the FollowsController.
 
 2. Route::get('/', 'App\Http\Controllers\PostsController@index');
