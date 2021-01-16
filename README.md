@@ -1,7 +1,6 @@
 # Webapp Project: ISLAMGRAM                 
   # PREPARED BY: ZAYAN GROUP
   
-  *Codes are in master branch*
 
 
 # Group Members:
