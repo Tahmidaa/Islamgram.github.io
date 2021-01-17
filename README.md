@@ -55,7 +55,8 @@ If a user already has an account, they can login with their username and passwor
  - Users can add posts and write captions for the posts by clicking on the “Add New Post” option. Adding a post will update the user’s profile and show how many posts a user has. 
  - Users can add as many posts as they want. Users and posts have a one-many relationship.
  - Users can edit their profile information by clicking the “Edit Profile” button. They can change the title of their bio, add a description, add a URL of their choice, and change their profile pictures by uploading an image.
- - Users can follow other users by visiting their profiles and it’ll be shown on their profile bio how many people they are following and how many people are following them.
+ - Users can follow other users by visiting their profiles and it’ll be shown on their profile bio how many people they are following and how many people are following them. User can have many followers and can follow many so this a many-many relationship.
+
  - Users can delete a post by just clicking on the delete button under post as well as if they wish to delete their account they can delete it as well.
 
 
