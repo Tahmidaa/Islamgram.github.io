@@ -1,34 +1,5 @@
 # Webapp Project: ISLAMGRAM                 
-  # PREPARED BY: ZAYAN GROUP
-  
-  *Codes are in master branch*
-
-
-# Group Members:
-
-  1) Tahmida Haque Sumbula 1819216
-  2) Sehrish Kantroo 1726406
-  3) Hadil Muhammadal Almekhlafi 1618880
-
-# WORK DISTRIBUTION:
-
-Tahmida - 
-
-1. Post
-2. Show
-3. Finding user with id to bring user name to profile
-
-Sehrish-
-
-1. Edit
-2. Policy
-3. Logo & profile design, one to one relationship
-
-Hadil-
-
-1. Delete
-2. Follow
-3. Adding username to registration
+ 
 
 # ABSTRACT
 
